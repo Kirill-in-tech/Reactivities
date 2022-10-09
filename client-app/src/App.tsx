@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
 import { Header, Icon, List } from 'semantic-ui-react';
@@ -16,8 +15,8 @@ function App() {
   },[])
 
   return (
-    <div>
-      <Header as='h2' icon = 'users' content='Reactivities' />
+    <div className='App'>
+      <Header className='App-header' as='h2' icon = {{name:'users', color: 'teal'}} subheader={{content:'Hello'}} content='Reactivities' />
   
         <List>
             {activities.map((activity: any) => (
@@ -25,12 +24,11 @@ function App() {
             {activity.title}
             </List.Item>
             ))}
-        </List>
-        
-          
-        
+        </List>     
+                 
     </div>
   );
 }
 
 export default App;
+ 
