@@ -1,4 +1,5 @@
 using Application.Activities;
+using Application.Core;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
@@ -31,7 +32,7 @@ namespace API
                 });
             });
             services.AddMediatR(typeof(List.Handler).Assembly);
-            services.AddMediatR(typeof(Details.Handler).Assembly);
+            services.AddAutoMapper(typeof(MappingProfiles).Assembly);
             
             services.AddControllers();
             services.AddSwaggerGen(c =>
